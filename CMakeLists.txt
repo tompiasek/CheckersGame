@@ -10,6 +10,7 @@ endif()
 project("PiAA-Project_3-Game")
 
 set(CMAKE_CXX_STANDARD 17)
+set(SFML_STATIC_LIBRARIES TRUE)
 
 add_library(game_lib "src/game.cpp" "src/board.cpp" "src/piece.cpp")
 target_include_directories(game_lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include/")
@@ -33,10 +34,12 @@ target_include_directories("PiAA-Project_3-Game" PUBLIC "${CMAKE_CURRENT_SOURCE_
 target_include_directories("PiAA-Project_3-Game" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/external/img/")
 
 # Set the path to the SFML directory
-set(SFML_DIR "C:/Users/tompi/documents/SFML-2.6.1/lib/cmake/SFML/")
+#set(SFML_DIR "C:/Users/tompi/documents/SFML-2.6.1/lib/cmake/SFML/")
+set(SFML_DIR "external/SFML-2.6.1/lib/cmake/SFML/")
 
 # Set the prefix path for SFML
-set(CMAKE_PREFIX_PATH "C:/Users/tompi/documents/SFML-2.6.1/")
+#set(CMAKE_PREFIX_PATH "C:/Users/tompi/documents/SFML-2.6.1/")
+set(CMAKE_PREFIX_PATH "external/SFML-2.6.1/")
 
 # Find the SFML package
 find_package(SFML 2.5...2.6.1 COMPONENTS graphics window system REQUIRED)
